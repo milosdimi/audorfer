@@ -1,101 +1,540 @@
-/* Allgemeine Stile */
-body,
-html {
+body {
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
+    box-sizing: border-box;
+    font-family: 'Averia Libre', sans-serif;
+    font-weight: 400;
+    /* Normales Gewicht als Standard */
 }
 
-/* Hero Bereich */
 .hero {
+    background: url('./img/hero1.jpg') no-repeat center center;
+    background-size: cover;
+    /* Bild füllt die gesamte Section */
+    min-height: 60vh;
+    /* Volle Bildschirmhöhe */
+    display: flex;
+    align-items: center;
+    justify-content: center;
     position: relative;
-    background: url('img/hero2.jpg') no-repeat center center/cover;
-    height: 100vh;
+    /* Damit die Navbar darüber liegt */
+}
+
+.navbar {
+    background-color: rgba(255, 255, 255, 0.1);
+    /* Leicht transparenter Hintergrund */
+    -webkit-backdrop-filter: blur(5px);
+    /* Für Webkit-Browser */
+    backdrop-filter: blur(5px);
+    /* Standard für moderne Browser */
+}
+
+.navbar .nav-link {
+    color: black;
+    /* Weiße Links für Kontrast */
+    font-weight: 500;
+}
+
+.navbar .nav-link:hover {
+    color: #ffc107;
+    /* Gelb beim Hover, passend zum Button */
+}
+
+.hero-content {
+    padding: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    /* Schatten für bessere Lesbarkeit */
+}
+
+.animate-text {
+    animation: fadeIn 2s ease-in-out;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+/* About-Sektion */
+#about {
+    background-color: #f8f9fa;
+}
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Mobile-spezifische Animation für das Bild */
+.mobile-fade-in {
+    opacity: 1;
+    /* Standardmäßig sichtbar auf Desktop */
+}
+
+#about img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Goldenes Theme */
+/* Goldenes Theme mit Averia Libre */
+.golden-title {
+    color: #FFD700;
+    /* Helles Gold für die Überschrift */
+    font-family: 'Averia Libre', sans-serif;
+    /* Dein neuer Font */
+    font-weight: 700;
+    font-size: 2.5rem;
+    /* Etwas größer für mehr Wirkung */
+}
+
+.intro-text {
+    color: #333;
+    /* Dunkelgrau für guten Kontrast */
+    font-family: 'Averia Libre', sans-serif;
+    font-weight: 400;
+    /* Normal für den Text */
+    line-height: 1.6;
+}
+
+.service-highlight {
+    color: #DAA520;
+    /* Dunkleres Gold für Hervorhebung */
+    font-family: 'Averia Libre', sans-serif;
+    font-weight: 600;
+    /* Etwas kräftiger */
+}
+
+.service-list li {
+    margin-bottom: 10px;
+    /* Mehr Abstand zwischen Listenelementen */
+    color: #555;
+    /* Dunkelgrau für Text */
+    font-family: 'Averia Libre', sans-serif;
+    font-weight: 400;
+    transition: transform 0.3s ease;
+    /* Leichte Animation */
+}
+
+.service-list li:hover {
+    transform: translateX(5px);
+    /* Leichter Shift beim Hover */
+}
+
+.golden-icon {
+    color: #F4C430;
+    /* Mittelgold für Icons */
+    transition: color 0.3s ease;
+}
+
+.service-list li:hover .golden-icon {
+    color: #FFD700;
+    /* Helles Gold beim Hover */
+}
+
+/* Services section */
+/* Services-Sektion */
+.services-section {
+    position: relative;
+    overflow: hidden;
+    /* Verhindert Überlaufen des animierten Hintergrunds */
+    padding: 80px 0;
+    /* Mehr Padding für Eleganz */
+}
+
+.services-bg-animated {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #FFD700, #DAA520, #F4C430);
+    /* Goldener Verlauf */
+    opacity: 0.2;
+    /* Subtil */
+    z-index: 0;
+    /* Hinter dem Inhalt */
+    animation: gradientShift 10s ease infinite;
+    /* Animation für Farbwechsel */
+    transform: translateY(100%);
+    /* Start außerhalb */
+    transition: transform 0.8s ease-out;
+    /* Beim Scrollen hoch */
+}
+
+.services-section.visible .services-bg-animated {
+    transform: translateY(0);
+    /* Sichtbar beim Scrollen */
+}
+
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.services-bg {
+    position: relative;
+    z-index: 1;
+    /* Über dem animierten Hintergrund */
+}
+
+.services-bg img {
+    border: 5px solid #FFD700;
+    /* Goldener Rahmen */
+}
+
+/* Text- und Button-Verbesserungen */
+.shadow-text {
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+    /* Subtiler Schatten */
+}
+
+.shadow-btn {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    /* Schatten für den Button */
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.shadow-btn:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    /* Stärkerer Schatten beim Hover */
+    transform: translateY(-2px);
+    /* Leichtes Anheben */
+}
+
+/* Bestehende Animationen bleiben, nur Feinjustierung */
+.fade-in-right {
+    opacity: 0;
+    transform: translateX(50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in-right.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Expertise-Sektion */
+.expertise-section {
+    position: relative;
+    overflow: hidden;
+    padding: 80px 0;
+}
+
+.expertise-bg-animated {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #F4C430, #DAA520, #FFD700);
+    /* Umgekehrter Gold-Verlauf */
+    opacity: 0.2;
+    z-index: 0;
+    animation: gradientShift 12s ease infinite;
+    /* Etwas langsamer als vorher */
+    transform: translateX(-100%);
+    /* Startet links außerhalb */
+    transition: transform 0.8s ease-out;
+}
+
+.expertise-section.visible .expertise-bg-animated {
+    transform: translateX(0);
+    /* Beim Scrollen rein */
+}
+
+/* Animation von links */
+.fade-in-left {
+    opacity: 0;
+    transform: translateX(-50px);
+    /* Startet 50px links */
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in-left.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Icon-Boxen Styling */
+.expertise-boxes .golden-icon {
+    font-size: 2rem;
+    /* Größere Icons */
+    color: #F4C430;
+}
+
+.expertise-boxes h4 {
+    margin-bottom: 10px;
+}
+
+.expertise-boxes .d-flex:hover .golden-icon {
+    color: #FFD700;
+    /* Helles Gold beim Hover */
+}
+
+/* Bild-Styling */
+.expertise-section img {
+    border: 5px solid #FFD700;
+    /* Goldener Rahmen */
+}
+
+/* How We Work Sektion */
+.how-we-work-section {
+    position: relative;
+    overflow: hidden;
+    padding: 80px 0;
+    background-color: #f8f9fa;
+}
+
+/* Flex-Anpassung für Desktop und Mobil */
+.how-we-work-section .row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+
+/* Schritt-Boxen */
+.step-box {
+    background: #fff;
+    padding: 15px;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    width: 220px;
+    height: 220px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: center;
 }
 
-/* Navigation in den Hero-Bereich integrieren */
-.navbar {
+.step-box:hover {
+    transform: translateY(-5px);
+}
+
+.rounded-icon {
+    max-width: 60px;
+    height: auto;
+    border-radius: 50%;
+    border: 3px solid #FFD700;
+}
+
+.step-number {
+    color: #DAA520;
+    font-family: 'Averia Libre', sans-serif;
+    font-weight: 700;
+    font-size: 1.25rem;
+    margin-bottom: 5px;
+}
+
+.service-highlight {
+    font-size: 1rem;
+    margin-bottom: 5px;
+}
+
+.intro-text {
+    font-size: 0.8rem;
+    padding: 0 8px;
+}
+
+/* Spalten-Anpassung */
+.step-col {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+/* Pfeil-Anpassung */
+.arrow-col {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    /* Abstand für Mobil */
+}
+
+.arrow-icon {
+    font-size: 1.5rem;
+    color: #F4C430;
+}
+/* Discount Sektion */
+.discount-section {
+    position: relative;
+    overflow: hidden;
+    padding: 100px 0; /* Mehr Platz für den Effekt */
+    min-height: 400px; /* Mindesthöhe für Sichtbarkeit */
+}
+
+.discount-bg {
+    position: absolute;
+    top: -50%; /* Startet höher, damit es beim Scrollen reinläuft */
+    left: 0;
+    width: 100%;
+    height: 226%; /* Noch mehr Höhe für sichtbaren Parallax */
+    background: url('./img/discount-bg.jpg') no-repeat center center;
+    background-size: cover;
+    z-index: 0;
+    transform: translateY(0);
+    transition: transform 0.1s linear;
+}
+
+.discount-section::after {
+    content: '';
     position: absolute;
     top: 0;
+    left: 0;
     width: 100%;
-    background: transparent !important;
-    padding: 15px 0;
-    z-index: 10;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3); /* Dunkles Overlay für Kontrast */
+    z-index: 1;
 }
 
-/* Logo */
-.navbar-brand img {
-    height: 130px; /* Großes Logo */
-    width: auto;
+/* Text und Button über dem Hintergrund */
+.discount-section .container {
+    z-index: 2; /* Über dem Bild und Overlay */
 }
 
-/* Navigation Links */
-.navbar .nav-link {
-    color: white !important; /* Weiß für bessere Sichtbarkeit */
-    font-weight: bold;
-    font-size: 1.2rem;
-    padding: 10px 15px;
-    transition: color 0.3s;
+.golden-title {
+    color: #FFD700;
+    font-family: 'Averia Libre', sans-serif;
+    font-weight: 700;
+    font-size: 2.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Stärkerer Schatten für Lesbarkeit */
 }
 
-.navbar .nav-link:hover {
-    color: #ffbd59 !important;
+.btn-warning {
+    background-color: #DAA520;
+    border-color: #DAA520;
+    font-family: 'Averia Libre', sans-serif;
+    font-weight: 600;
 }
 
-/* Hero-Text */
-.hero-content {
-    text-align: center;
-    color: white;
-    background: rgba(0, 0, 0, 0.5);
-    padding: 20px;
-    border-radius: 10px;
+.btn-warning:hover {
+    background-color: #FFD700;
+    border-color: #FFD700;
 }
 
-/* Button */
-.hero .btn-warning {
-    background-color: #ffbd59;
-    border: none;
-    padding: 12px 24px;
-    font-size: 1.2rem;
-    transition: background 0.3s;
+/* Fade-In-Up Animation */
+.fade-in-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
 
-.hero .btn-warning:hover {
-    background-color: #e6a84f;
+.fade-in-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+/* Footer Sektion */
+.footer-section {
+    background-color: #212529; /* Dunkelgrau */
+    color: #fff;
 }
 
+.footer-section .golden-title {
+    font-size: 1.5rem;
+    color: #FFD700;
+}
 
-/* Animierte Texte */
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
+.footer-section .intro-text {
+    font-size: 0.9rem;
+    color: #ccc;
+}
+
+.social-links a {
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #F4C430; /* Helleres Gold beim Hover */
+}
+
+.footer-section a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer-section a:hover {
+    color: #FFD700;
+}
+
+.footer-section .small {
+    font-size: 0.8rem;
+    color: #999;
+}
+
+/* Responsivität für Mobilgeräte */
+@media (max-width: 767.98px) {
+    .how-we-work-section .row {
+        flex-direction: column;
+        flex-wrap: wrap;
     }
 
-    to {
+    .step-box {
+        width: 200px;
+        height: 200px;
+    }
+
+    .rounded-icon {
+        max-width: 50px;
+    }
+
+    .step-number {
+        font-size: 1.1rem;
+    }
+
+    .service-highlight {
+        font-size: 0.9rem;
+    }
+
+    .intro-text {
+        font-size: 0.75rem;
+    }
+
+    .step-col {
+        margin-bottom: 15px;
+        /* Weniger Abstand vor Pfeil */
+    }
+
+    .arrow-col {
+        margin-bottom: 15px;
+        /* Abstand nach Pfeil */
+    }
+
+    /* Mobile Ansicht */
+    .mobile-fade-in {
+        opacity: 0;
+        /* Unsichtbar bis Scroll */
+        transform: translateY(20px);
+        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+
+    .mobile-fade-in.visible {
         opacity: 1;
         transform: translateY(0);
     }
 }
-/* Responsive Anpassung für mobile Geräte */
-@media (max-width: 768px) {
-    .navbar {
-        height: 60px; /* Kleinere Navbar */
-    }
 
-    .navbar-brand {
-        top: -50px; /* Weniger Platz für Logo */
-    }
-
-    .navbar-brand img {
-        height: 90px; /* Kleinere Logo-Größe für Mobilgeräte */
-    }
-
-    .navbar .nav-link {
-        font-size: 1rem; /* Kleinere Schrift auf Mobilgeräten */
-    }
-}

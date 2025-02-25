@@ -8,46 +8,250 @@
     <link rel="icon" type="image/svg+xml" href="./favicon/favicon.svg" />
     <link rel="shortcut icon" href="./favicon/favicon.ico" />
     <link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-touch-icon.png" />
-    <link rel="manifest" href="/./favicon/site.webmanifest" />
+    <link rel="manifest" href="./favicon/site.webmanifest" />
     <title>Audorfer Reinigung</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <!-- Google Fonts für Averia Libre -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Averia+Libre:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <body>
-        <!-- Hero Bereich mit Navbar -->
-        <header class="hero">
-            <!-- Navigation direkt im Hero -->
-            <nav class="navbar navbar-expand-lg fixed-top">
-                <div class="container">
-                    <a class="navbar-brand" href="#">
-                        <img src="./img/logo/logo_transparent2.png" alt="Audorfer Logo">
-                    </a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" title="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarNav">
-                        <ul class="navbar-nav ms-auto">
-                            <li class="nav-item"><a class="nav-link" href="#about">Über uns</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#services">Leistungen</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#contact">Kontakt</a></li>
-                        </ul>
+    <!-- Hero Bereich mit Navbar -->
+    <header class="hero">
+        <nav class="navbar navbar-expand-lg fixed-top">
+            <div class="container">
+                <a class="navbar-brand" href="#">
+                    <img src="./img/logo/logo_transparent2.png" alt="Audorfer Logo" style="max-height: 50px;">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    title="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="#about">Über uns</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#services">Leistungen</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#contact">Kontakt</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="hero-content text-center text-white">
+            <h2 class="animate-text">Professionelle Reinigung für Ihr Zuhause & Büro</h2>
+            <p>Sauberkeit, die begeistert – zuverlässig und umweltfreundlich.</p>
+            <a href="#contact" class="btn btn-warning btn-lg">Jetzt Kontakt aufnehmen</a>
+        </div>
+    </header>
+
+    <!-- Über uns Sektion -->
+    <section id="about" class="py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 fade-in">
+                    <h2 class="golden-title">Audorfer Reinigung</h2>
+                    <p class="intro-text">Ein beschreibender Absatz, der Ihren Kunden zeigt, wie gut Sie sind und
+                        beweist, dass Sie die beste Wahl getroffen haben. Dieser Absatz richtet sich auch an diejenigen,
+                        die nach einem zuverlässigen Service suchen.</p>
+                    <p class="service-highlight"><strong>Unsere Dienstleistungen sind perfekt für:</strong></p>
+                    <ul class="list-unstyled service-list">
+                        <li><i class="bi bi-house me-2 golden-icon"></i> Haus</li>
+                        <li><i class="bi bi-shop me-2 golden-icon"></i> Restaurant</li>
+                        <li><i class="bi bi-bank me-2 golden-icon"></i> Kultstätte</li>
+                        <li><i class="bi bi-building me-2 golden-icon"></i> Hotel</li>
+                        <li><i class="bi bi-box-seam me-2 golden-icon"></i> Lagerhallen</li>
+                        <li><i class="bi bi-shop-window me-2 golden-icon"></i> Ausstellungsräume</li>
+                        <li><i class="bi bi-briefcase me-2 golden-icon"></i> Büro</li>
+                        <li><i class="bi bi-hospital me-2 golden-icon"></i> Krankenhaus</li>
+                    </ul>
+                </div>
+                <div class="col-lg-6">
+                    <img src="./img/hero2.jpg" alt="Reinigungsteam" class="img-fluid rounded shadow mobile-fade-in">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Services Sektion -->
+    <section id="services" class="py-5 services-section">
+        <div class="services-bg-animated"></div> <!-- Animierter Hintergrund -->
+        <div class="container position-relative"> <!-- Container über dem Hintergrund -->
+            <div class="row align-items-center">
+                <!-- Linke Spalte (Bild mit Schatten) -->
+                <div class="col-lg-6 services-bg fade-in-right">
+                    <img src="./img/services-bg.jpg" alt="Reinigungsservice" class="img-fluid rounded shadow-lg">
+                </div>
+                <!-- Rechte Spalte (Text und Button) -->
+                <div class="col-lg-6 fade-in-right">
+                    <h2 class="golden-title shadow-text">Wir reinigen Ihre Sorgen weg</h2>
+                    <p class="intro-text shadow-text">Ein beschreibender Absatz, der Ihren Kunden zeigt, wie gut Sie
+                        sind und beweist, dass Sie die beste Wahl getroffen haben. Dieser Absatz richtet sich auch an
+                        diejenigen, die nach einem zuverlässigen Service suchen.</p>
+                    <p class="intro-text shadow-text">Ein weiterer Absatz, der Ihre Professionalität und Sorgfalt
+                        unterstreicht – Sauberkeit, auf die Sie sich verlassen können, mit einem umweltfreundlichen
+                        Ansatz.</p>
+                    <a href="#contact" class="btn btn-warning btn-lg mt-3 shadow-btn">Service anfragen</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Expertise Sektion -->
+    <section id="expertise" class="py-5 expertise-section">
+        <div class="expertise-bg-animated"></div> <!-- Animierter Hintergrund -->
+        <div class="container position-relative">
+            <div class="row align-items-center">
+                <!-- Linke Spalte (Text und Icon-Boxen) -->
+                <div class="col-lg-6 fade-in-left">
+                    <h2 class="golden-title shadow-text">Unsere Expertise lässt Ihr Geschäft erstrahlen</h2>
+                    <div class="expertise-boxes mt-4">
+                        <div class="d-flex align-items-start mb-4">
+                            <i class="bi bi-broom golden-icon me-3"></i>
+                            <div>
+                                <h4 class="service-highlight">Über 250.000 Reinigungen</h4>
+                                <p class="intro-text">Ein beschreibender Absatz, der Ihren Kunden zeigt, wie gut Sie
+                                    sind und beweist, dass Sie die beste Wahl getroffen haben.</p>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-start mb-4">
+                            <i class="bi bi-leaf golden-icon me-3"></i>
+                            <div>
+                                <h4 class="service-highlight">Umweltfreundliche Reinigung</h4>
+                                <p class="intro-text">Ein beschreibender Absatz, der Ihre Professionalität und Ihren
+                                    umweltfreundlichen Ansatz unterstreicht.</p>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-start mb-4">
+                            <i class="bi bi-coin golden-icon me-3"></i>
+                            <div>
+                                <h4 class="service-highlight">Kosteneffizient</h4>
+                                <p class="intro-text">Ein beschreibender Absatz, der Ihre Kunden von Ihrem
+                                    Preis-Leistungs-Verhältnis überzeugt.</p>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-start mb-4">
+                            <i class="bi bi-hand-thumbs-up golden-icon me-3"></i>
+                            <div>
+                                <h4 class="service-highlight">100% Zufriedenheit</h4>
+                                <p class="intro-text">Ein beschreibender Absatz, der Ihre Zuverlässigkeit und
+                                    Kundenzufriedenheit hervorhebt.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </nav>
-    
-            <!-- Hero-Content -->
-            <div class="hero-content text-center text-white">
-                <h1 class="animate-text">Professionelle Reinigung für Ihr Zuhause & Büro</h1>
-                <p>Sauberkeit, die begeistert – zuverlässig und umweltfreundlich.</p>
-                <a href="#contact" class="btn btn-warning btn-lg">Jetzt Kontakt aufnehmen</a>
+                <!-- Rechte Spalte (Bild mit Rahmen) -->
+                <div class="col-lg-6 fade-in-left">
+                    <img src="./img/expertise-bg.jpg" alt="Expertise" class="img-fluid rounded shadow-lg">
+                </div>
             </div>
-        </header>
-    </body>
-    
-
+        </div>
+    </section>
+    <!-- How We Work Sektion -->
+    <section id="how-we-work" class="py-5 how-we-work-section">
+        <div class="how-bg-animated"></div> <!-- Animierter Hintergrund -->
+        <div class="container position-relative text-center">
+            <h2 class="golden-title shadow-text mb-5">Wie wir arbeiten</h2>
+            <div class="row justify-content-center align-items-center flex-md-row flex-column">
+                <!-- Schritt 1 -->
+                <div class="col-md-4 col-12 fade-in step-col">
+                    <div class="step-box">
+                        <img src="./img/step-1.png" alt="Online Buchung" class="step-icon mb-3 rounded-icon">
+                        <h5 class="step-number">01</h5>
+                        <h4 class="service-highlight">Online-Buchung</h4>
+                        <p class="intro-text">Einfach und schnell buchen.</p>
+                    </div>
+                </div>
+                <!-- Pfeil (Desktop: rechts, Mobil: unten) -->
+                <div class="col-md-1 col-12 fade-in arrow-col">
+                    <i class="bi bi-arrow-right golden-icon arrow-icon d-md-block d-none"></i>
+                    <i class="bi bi-arrow-down golden-icon arrow-icon d-md-none d-block"></i>
+                </div>
+                <!-- Schritt 2 -->
+                <div class="col-md-4 col-12 fade-in step-col">
+                    <div class="step-box">
+                        <img src="./img/step-2.png" alt="Sorgfältige Reinigung" class="step-icon mb-3 rounded-icon">
+                        <h5 class="step-number">02</h5>
+                        <h4 class="service-highlight">Sorgfältige Reinigung</h4>
+                        <p class="intro-text">Professionell und gründlich.</p>
+                    </div>
+                </div>
+                <!-- Pfeil (Desktop: rechts, Mobil: unten) -->
+                <div class="col-md-1 col-12 fade-in arrow-col">
+                    <i class="bi bi-arrow-right golden-icon arrow-icon d-md-block d-none"></i>
+                    <i class="bi bi-arrow-down golden-icon arrow-icon d-md-none d-block"></i>
+                </div>
+                <!-- Schritt 3 -->
+                <div class="col-md-4 col-12 fade-in step-col">
+                    <div class="step-box">
+                        <img src="./img/step-3.png" alt="Sauberkeit genießen" class="step-icon mb-3 rounded-icon">
+                        <h5 class="step-number">03</h5>
+                        <h4 class="service-highlight">Sauberkeit genießen</h4>
+                        <p class="intro-text">Entspannen und freuen.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Discount Sektion -->
+    <section id="discount" class="discount-section py-5">
+        <div class="discount-bg"></div> <!-- Hintergrundbild mit Parallax -->
+        <div class="container position-relative text-center">
+            <div class="row justify-content-center fade-in-up">
+                <div class="col-lg-8">
+                    <h2 class="golden-title shadow-text">20% Rabatt sichern? Zeit sparen. Geld sparen. Sich selbst
+                        entlasten.</h2>
+                    <a href="#contact" class="btn btn-warning btn-lg mt-4 shadow-btn">Kostenvoranschlag erhalten</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer class="footer-section py-5 bg-dark text-white">
+        <div class="container">
+            <div class="row">
+                <!-- Logo und Kurzbeschreibung -->
+                <div class="col-md-4 mb-4">
+                    <a href="#" class="d-block mb-3">
+                        <img src="./img/logo/logo_transparent2.png" alt="Audorfer Logo" style="max-height: 60px;">
+                    </a>
+                    <p class="intro-text">Audorfer Reinigung – Sauberkeit, die begeistert. Zuverlässig und
+                        umweltfreundlich.</p>
+                </div>
+                <!-- Social Media und Kontakt -->
+                <div class="col-md-4 mb-4 text-center">
+                    <h5 class="golden-title mb-3">Folge uns</h5>
+                    <div class="social-links">
+                        <a href="#" class="text-warning me-3"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="text-warning me-3"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="text-warning me-3"><i class="bi bi-twitter"></i></a>
+                        <a href="#" class="text-warning"><i class="bi bi-linkedin"></i></a>
+                    </div>
+                    <p class="mt-3">Kontakt: <a href="mailto:info@audorfer-reinigung.de"
+                            class="text-warning">info@audorfer-reinigung.de</a></p>
+                </div>
+                <!-- Links (Impressum, Datenschutz) -->
+                <div class="col-md-4 mb-4 text-md-end">
+                    <h5 class="golden-title mb-3">Rechtliches</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#impressum" class="text-white">Impressum</a></li>
+                        <li><a href="#datenschutz" class="text-white">Datenschutz</a></li>
+                        <li><a href="#agb" class="text-white">AGB</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Copyright -->
+            <div class="row mt-4">
+                <div class="col-12 text-center">
+                    <p class="small">&copy; 2025 Audorfer Reinigung. Alle Rechte vorbehalten.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
 </body>
 
 </html>
