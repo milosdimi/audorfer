@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /send_mail.html
+Allow: /
+
+Sitemap: https://www.audorfer.com/sitemap.xml

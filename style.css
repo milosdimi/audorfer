@@ -379,20 +379,25 @@ body {
     font-size: 1.5rem;
     color: #F4C430;
 }
+
 /* Discount Sektion */
 .discount-section {
     position: relative;
     overflow: hidden;
-    padding: 100px 0; /* Mehr Platz für den Effekt */
-    min-height: 400px; /* Mindesthöhe für Sichtbarkeit */
+    padding: 100px 0;
+    /* Mehr Platz für den Effekt */
+    min-height: 400px;
+    /* Mindesthöhe für Sichtbarkeit */
 }
 
 .discount-bg {
     position: absolute;
-    top: -50%; /* Startet höher, damit es beim Scrollen reinläuft */
+    top: -50%;
+    /* Startet höher, damit es beim Scrollen reinläuft */
     left: 0;
     width: 100%;
-    height: 226%; /* Noch mehr Höhe für sichtbaren Parallax */
+    height: 226%;
+    /* Noch mehr Höhe für sichtbaren Parallax */
     background: url('./img/discount-bg.jpg') no-repeat center center;
     background-size: cover;
     z-index: 0;
@@ -407,13 +412,15 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.3); /* Dunkles Overlay für Kontrast */
+    background: rgba(0, 0, 0, 0.3);
+    /* Dunkles Overlay für Kontrast */
     z-index: 1;
 }
 
 /* Text und Button über dem Hintergrund */
 .discount-section .container {
-    z-index: 2; /* Über dem Bild und Overlay */
+    z-index: 2;
+    /* Über dem Bild und Overlay */
 }
 
 .golden-title {
@@ -421,7 +428,8 @@ body {
     font-family: 'Averia Libre', sans-serif;
     font-weight: 700;
     font-size: 2.5rem;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Stärkerer Schatten für Lesbarkeit */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    /* Stärkerer Schatten für Lesbarkeit */
 }
 
 .btn-warning {
@@ -447,9 +455,72 @@ body {
     opacity: 1;
     transform: translateY(0);
 }
+
+/* Kontakt Sektion */
+.contact-section {
+    background-color: #f8f9fa;
+    /* Hellgrauer Hintergrund */
+    padding: 80px 0;
+}
+
+.contact-form .form-label {
+    font-family: 'Averia Libre', sans-serif;
+    color: #555;
+}
+
+.contact-form .form-control {
+    border-radius: 5px;
+    font-family: 'Averia Libre', sans-serif;
+}
+
+.contact-form .form-check-label {
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.contact-info {
+    background-color: #212529;
+    /* Dunkelgrau wie Footer */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contact-info p {
+    margin-bottom: 10px;
+    color: #ccc;
+}
+
+.contact-info .golden-icon {
+    font-size: 1.2rem;
+    color: #F4C430;
+}
+
+/* Animationen */
+.fade-in-left {
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in-left.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.fade-in-right {
+    opacity: 0;
+    transform: translateX(50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in-right.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
 /* Footer Sektion */
 .footer-section {
-    background-color: #212529; /* Dunkelgrau */
+    background-color: #212529;
+    /* Dunkelgrau */
     color: #fff;
 }
 
@@ -469,7 +540,8 @@ body {
 }
 
 .social-links a:hover {
-    color: #F4C430; /* Helleres Gold beim Hover */
+    color: #F4C430;
+    /* Helleres Gold beim Hover */
 }
 
 .footer-section a {
@@ -486,6 +558,212 @@ body {
     color: #999;
 }
 
+/* Sticky WhatsApp Button (links) */
+.sticky-whatsapp {
+    position: fixed;
+    bottom: 20px;
+    /* Abstand vom unteren Rand */
+    left: 20px;
+    /* Links statt rechts */
+    z-index: 1000;
+    padding: 10px 20px;
+    font-family: 'Averia Libre', sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+    border-radius: 25px;
+    background-color: #DAA520;
+    border-color: #DAA520;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.sticky-whatsapp:hover {
+    background-color: #FFD700;
+    border-color: #FFD700;
+    transform: scale(1.05);
+}
+
+/* Sticky Nach-oben Button (rechts) */
+.sticky-top-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    padding: 10px 15px;
+    font-family: 'Averia Libre', sans-serif;
+    font-size: 1.2rem;
+    border-radius: 50%;
+    /* Rund für Pfeil */
+    background-color: #DAA520;
+    border-color: #DAA520;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.sticky-top-btn:hover {
+    background-color: #FFD700;
+    border-color: #FFD700;
+    transform: scale(1.05);
+}
+
+/* Auf Mobilgeräten sichtbar lassen */
+@media (max-width: 767.98px) {
+    .sticky-whatsapp {
+        padding: 8px 15px;
+        /* Etwas kleiner */
+        font-size: 0.9rem;
+    }
+
+    .sticky-top-btn {
+        padding: 8px 12px;
+        font-size: 1rem;
+    }
+}
+
+/* Cookie Banner */
+.cookie-banner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #212529;
+    /* Dunkelgrau wie Footer */
+    padding: 15px 0;
+    z-index: 1100;
+    /* Über Sticky-Buttons */
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
+    display: none;
+    /* Startet versteckt, JS zeigt es */
+}
+
+.cookie-banner .intro-text {
+    font-size: 0.9rem;
+    color: #ccc;
+}
+
+.cookie-banner .btn-sm {
+    font-family: 'Averia Libre', sans-serif;
+    font-weight: 600;
+    padding: 5px 15px;
+}
+
+.cookie-banner .btn-warning {
+    background-color: #DAA520;
+    border-color: #DAA520;
+}
+
+.cookie-banner .btn-warning:hover {
+    background-color: #FFD700;
+    border-color: #FFD700;
+}
+
+.cookie-banner .btn-outline-warning {
+    color: #DAA520;
+    border-color: #DAA520;
+}
+
+.cookie-banner .btn-outline-warning:hover {
+    color: #FFD700;
+    border-color: #FFD700;
+}
+
+/* Responsivität */
+@media (max-width: 767.98px) {
+    .cookie-banner .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .cookie-banner .intro-text {
+        margin-bottom: 10px;
+    }
+}
+
+/* Privacy Sektion */
+.privacy-section {
+    background-color: #f8f9fa;
+    padding: 80px 0;
+}
+
+.privacy-section .card {
+    border: none;
+    border-radius: 10px;
+    background-color: #fff;
+}
+
+.privacy-section .card-body {
+    padding: 30px;
+}
+
+.privacy-section .service-highlight {
+    color: #DAA520;
+    font-size: 1.5rem;
+}
+
+.privacy-section .intro-text {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Impressum Sektion */
+.impressum-section {
+    background-color: #f8f9fa;
+    padding: 80px 0;
+}
+
+.impressum-section .card {
+    border: none;
+    border-radius: 10px;
+    background-color: #fff;
+}
+
+.impressum-section .card-body {
+    padding: 30px;
+}
+
+.impressum-section .service-highlight {
+    color: #DAA520;
+    font-size: 1.5rem;
+}
+
+.impressum-section .intro-text {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Angebot Sektion */
+.offer-section {
+    background-color: #f8f9fa;
+    padding: 80px 0;
+}
+
+.offer-form .form-label {
+    font-family: 'Averia Libre', sans-serif;
+    color: #555;
+}
+
+.offer-form .form-control,
+.offer-form .form-select {
+    border-radius: 5px;
+    font-family: 'Averia Libre', sans-serif;
+}
+
+.offer-form .form-check-label {
+    font-size: 0.9rem;
+    color: #555;
+}
+/* Thank You Sektion */
+.thank-you-section {
+    background-color: #f8f9fa;
+    padding: 100px 0; /* Mehr Platz für Zentrierung */
+}
+
+.thank-you-section .intro-text {
+    font-size: 1.2rem;
+    color: #555;
+}
 /* Responsivität für Mobilgeräte */
 @media (max-width: 767.98px) {
     .how-we-work-section .row {
@@ -537,4 +815,3 @@ body {
         transform: translateY(0);
     }
 }
-
