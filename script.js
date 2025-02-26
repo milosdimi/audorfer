@@ -41,22 +41,16 @@ document.addEventListener("DOMContentLoaded", function () {
     checkVisibility();
 });
 
-// Kontaktformular senden
 function sendMail(event) {
     event.preventDefault();
-
     const data = new FormData(event.target);
-
     fetch("https://formspree.io/f/mqaevjej", {
         method: "POST",
         body: data,
+        mode: "no-cors"
     })
-        .then(response => {
-            if (response.ok) {
-                window.location.href = "./send_mail.html"; // Erfolgsseite
-            } else {
-                throw new Error("Formular konnte nicht gesendet werden");
-            }
+        .then(() => {
+            window.location.href = "https://putz.dimit.cc/send_mail.html";
         })
         .catch(error => {
             console.error("Fehler beim Senden des Formulars:", error);
