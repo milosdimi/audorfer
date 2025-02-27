@@ -44,13 +44,13 @@ document.addEventListener("DOMContentLoaded", function () {
 function sendMail(event) {
     event.preventDefault();
     const data = new FormData(event.target);
-    fetch("https://formspree.io/f/mqaevjej", {
+    fetch("https://formspree.io/f/mrbenzow", {
         method: "POST",
         body: data,
         mode: "no-cors"
     })
         .then(() => {
-            window.location.href = "https://putz.dimit.cc/send_mail.html";
+            window.location.href = "https://www.audorfer.com/send_mail.html";
         })
         .catch(error => {
             console.error("Fehler beim Senden des Formulars:", error);
