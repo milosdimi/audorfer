@@ -1,55 +1,73 @@
+/* Allgemeine Styles */
 body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Averia Libre', sans-serif;
     font-weight: 400;
-    /* Normales Gewicht als Standard */
+    /* Standardgewicht */
 }
 
-.hero {
-    background: url('./img/hero1.jpg') no-repeat center center;
-    background-size: cover;
-    /* Bild füllt die gesamte Section */
-    min-height: 60vh;
-    /* Volle Bildschirmhöhe */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    /* Damit die Navbar darüber liegt */
+/* Basis-Klassen (zentralisiert) */
+.golden-title {
+    color: #FFD700;
+    /* Helles Gold */
+    font-family: 'Averia Libre', sans-serif;
+    font-weight: 700;
+    font-size: 2.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
-.navbar {
-    background-color: rgba(255, 255, 255, 0.1);
-    /* Leicht transparenter Hintergrund */
-    -webkit-backdrop-filter: blur(5px);
-    /* Für Webkit-Browser */
-    backdrop-filter: blur(5px);
-    /* Standard für moderne Browser */
+.intro-text {
+    color: #555;
+    /* Dunkelgrau */
+    font-family: 'Averia Libre', sans-serif;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1.6;
 }
 
-.navbar .nav-link {
-    color: black;
-    /* Weiße Links für Kontrast */
-    font-weight: 500;
+.service-highlight {
+    color: #DAA520;
+    /* Dunkleres Gold */
+    font-family: 'Averia Libre', sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
 }
 
-.navbar .nav-link:hover {
-    color: #ffc107;
-    /* Gelb beim Hover, passend zum Button */
+.golden-icon {
+    color: #F4C430;
+    /* Mittelgold */
+    transition: color 0.3s ease;
 }
 
-.hero-content {
-    padding: 20px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-    /* Schatten für bessere Lesbarkeit */
+.shadow-text {
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
 }
 
-.animate-text {
-    animation: fadeIn 2s ease-in-out;
+.shadow-btn {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
 
+.shadow-btn:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    transform: translateY(-2px);
+}
+
+.btn-warning {
+    background-color: #DAA520;
+    border-color: #DAA520;
+    font-family: 'Averia Libre', sans-serif;
+    font-weight: 600;
+}
+
+.btn-warning:hover {
+    background-color: #FFD700;
+    border-color: #FFD700;
+}
+
+/* Animationen */
 @keyframes fadeIn {
     0% {
         opacity: 0;
@@ -60,9 +78,8 @@ body {
     }
 }
 
-/* About-Sektion */
-#about {
-    background-color: #f8f9fa;
+.animate-text {
+    animation: fadeIn 2s ease-in-out;
 }
 
 .fade-in {
@@ -76,10 +93,78 @@ body {
     transform: translateY(0);
 }
 
-/* Mobile-spezifische Animation für das Bild */
+.fade-in-left {
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in-left.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.fade-in-right {
+    opacity: 0;
+    transform: translateX(50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in-right.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.fade-in-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 .mobile-fade-in {
     opacity: 1;
-    /* Standardmäßig sichtbar auf Desktop */
+    /* Standard auf Desktop */
+}
+
+/* Hero Section */
+.hero {
+    background: url('./img/hero1.jpg') no-repeat center center;
+    background-size: cover;
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.hero-content {
+    padding: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.navbar {
+    background-color: rgba(255, 255, 255, 0.1);
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+}
+
+.navbar .nav-link {
+    color: black;
+    font-weight: 500;
+}
+
+.navbar .nav-link:hover {
+    color: #ffc107;
+}
+
+/* About Section */
+#about {
+    background-color: #f8f9fa;
 }
 
 #about img {
@@ -87,61 +172,25 @@ body {
     height: auto;
 }
 
-
-
-
-.intro-text {
-    color: #333;
-    /* Dunkelgrau für guten Kontrast */
-    font-family: 'Averia Libre', sans-serif;
-    font-weight: 400;
-    /* Normal für den Text */
-    line-height: 1.6;
-}
-
-.service-highlight {
-    color: #DAA520;
-    /* Dunkleres Gold für Hervorhebung */
-    font-family: 'Averia Libre', sans-serif;
-    font-weight: 600;
-    /* Etwas kräftiger */
-}
-
 .service-list li {
     margin-bottom: 10px;
-    /* Mehr Abstand zwischen Listenelementen */
     color: #555;
-    /* Dunkelgrau für Text */
-    font-family: 'Averia Libre', sans-serif;
-    font-weight: 400;
     transition: transform 0.3s ease;
-    /* Leichte Animation */
 }
 
 .service-list li:hover {
     transform: translateX(5px);
-    /* Leichter Shift beim Hover */
-}
-
-.golden-icon {
-    color: #F4C430;
-    /* Mittelgold für Icons */
-    transition: color 0.3s ease;
 }
 
 .service-list li:hover .golden-icon {
     color: #FFD700;
-    /* Helles Gold beim Hover */
 }
 
-/* Services section */
-/* Services-Sektion */
+/* Services Section */
 .services-section {
     position: relative;
     overflow: hidden;
-    /* Verhindert Überlaufen des animierten Hintergrunds */
     padding: 80px 0;
-    /* Mehr Padding für Eleganz */
 }
 
 .services-bg-animated {
@@ -151,22 +200,15 @@ body {
     width: 100%;
     height: 100%;
     background: linear-gradient(45deg, #FFD700, #DAA520, #F4C430);
-    /* Goldener Verlauf */
     opacity: 0.2;
-    /* Subtil */
     z-index: 0;
-    /* Hinter dem Inhalt */
     animation: gradientShift 10s ease infinite;
-    /* Animation für Farbwechsel */
     transform: translateY(100%);
-    /* Start außerhalb */
     transition: transform 0.8s ease-out;
-    /* Beim Scrollen hoch */
 }
 
 .services-section.visible .services-bg-animated {
     transform: translateY(0);
-    /* Sichtbar beim Scrollen */
 }
 
 @keyframes gradientShift {
@@ -186,46 +228,13 @@ body {
 .services-bg {
     position: relative;
     z-index: 1;
-    /* Über dem animierten Hintergrund */
 }
 
 .services-bg img {
     border: 5px solid #FFD700;
-    /* Goldener Rahmen */
 }
 
-/* Text- und Button-Verbesserungen */
-.shadow-text {
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
-    /* Subtiler Schatten */
-}
-
-.shadow-btn {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    /* Schatten für den Button */
-    transition: box-shadow 0.3s ease, transform 0.3s ease;
-}
-
-.shadow-btn:hover {
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-    /* Stärkerer Schatten beim Hover */
-    transform: translateY(-2px);
-    /* Leichtes Anheben */
-}
-
-/* Bestehende Animationen bleiben, nur Feinjustierung */
-.fade-in-right {
-    opacity: 0;
-    transform: translateX(50px);
-    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-}
-
-.fade-in-right.visible {
-    opacity: 1;
-    transform: translateX(0);
-}
-
-/* Expertise-Sektion */
+/* Expertise Section */
 .expertise-section {
     position: relative;
     overflow: hidden;
@@ -239,39 +248,19 @@ body {
     width: 100%;
     height: 100%;
     background: linear-gradient(135deg, #F4C430, #DAA520, #FFD700);
-    /* Umgekehrter Gold-Verlauf */
     opacity: 0.2;
     z-index: 0;
     animation: gradientShift 12s ease infinite;
-    /* Etwas langsamer als vorher */
     transform: translateX(-100%);
-    /* Startet links außerhalb */
     transition: transform 0.8s ease-out;
 }
 
 .expertise-section.visible .expertise-bg-animated {
     transform: translateX(0);
-    /* Beim Scrollen rein */
 }
 
-/* Animation von links */
-.fade-in-left {
-    opacity: 0;
-    transform: translateX(-50px);
-    /* Startet 50px links */
-    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-}
-
-.fade-in-left.visible {
-    opacity: 1;
-    transform: translateX(0);
-}
-
-/* Icon-Boxen Styling */
 .expertise-boxes .golden-icon {
     font-size: 2rem;
-    /* Größere Icons */
-    color: #F4C430;
 }
 
 .expertise-boxes h4 {
@@ -280,16 +269,13 @@ body {
 
 .expertise-boxes .d-flex:hover .golden-icon {
     color: #FFD700;
-    /* Helles Gold beim Hover */
 }
 
-/* Bild-Styling */
 .expertise-section img {
     border: 5px solid #FFD700;
-    /* Goldener Rahmen */
 }
 
-/* How We Work Sektion */
+/* How We Work Section */
 .how-we-work-section {
     position: relative;
     overflow: hidden;
@@ -297,7 +283,6 @@ body {
     background-color: #f8f9fa;
 }
 
-/* Flex-Anpassung für Desktop und Mobil */
 .how-we-work-section .row {
     display: flex;
     flex-direction: row;
@@ -305,7 +290,6 @@ body {
     align-items: center;
 }
 
-/* Schritt-Boxen */
 .step-box {
     background: #fff;
     padding: 15px;
@@ -334,36 +318,22 @@ body {
 
 .step-number {
     color: #DAA520;
-    font-family: 'Averia Libre', sans-serif;
     font-weight: 700;
     font-size: 1.25rem;
     margin-bottom: 5px;
 }
 
-.service-highlight {
-    font-size: 1rem;
-    margin-bottom: 5px;
-}
-
-.intro-text {
-    font-size: 0.8rem;
-    padding: 0 8px;
-}
-
-/* Spalten-Anpassung */
 .step-col {
     display: flex;
     justify-content: center;
     margin-bottom: 20px;
 }
 
-/* Pfeil-Anpassung */
 .arrow-col {
     display: flex;
     justify-content: center;
     align-items: center;
     margin-bottom: 20px;
-    /* Abstand für Mobil */
 }
 
 .arrow-icon {
@@ -371,24 +341,20 @@ body {
     color: #F4C430;
 }
 
-/* Discount Sektion */
+/* Discount Section */
 .discount-section {
     position: relative;
     overflow: hidden;
     padding: 100px 0;
-    /* Mehr Platz für den Effekt */
     min-height: 400px;
-    /* Mindesthöhe für Sichtbarkeit */
 }
 
 .discount-bg {
     position: absolute;
     top: -50%;
-    /* Startet höher, damit es beim Scrollen reinläuft */
     left: 0;
     width: 100%;
     height: 226%;
-    /* Noch mehr Höhe für sichtbaren Parallax */
     background: url('./img/discount-bg.jpg') no-repeat center center;
     background-size: cover;
     z-index: 0;
@@ -404,74 +370,41 @@ body {
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.3);
-    /* Dunkles Overlay für Kontrast */
     z-index: 1;
 }
 
-/* Text und Button über dem Hintergrund */
 .discount-section .container {
     z-index: 2;
-    /* Über dem Bild und Overlay */
 }
 
-.golden-title {
-    color: #FFD700;
-    font-family: 'Averia Libre', sans-serif;
-    font-weight: 700;
-    font-size: 2.5rem;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    /* Stärkerer Schatten für Lesbarkeit */
-}
-
-.btn-warning {
-    background-color: #DAA520;
-    border-color: #DAA520;
-    font-family: 'Averia Libre', sans-serif;
-    font-weight: 600;
-}
-
-.btn-warning:hover {
-    background-color: #FFD700;
-    border-color: #FFD700;
-}
-
-/* Fade-In-Up Animation */
-.fade-in-up {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-}
-
-.fade-in-up.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* Kontakt Sektion */
+/* Kontakt Section */
 .contact-section {
     background-color: #f8f9fa;
-    /* Hellgrauer Hintergrund */
     padding: 80px 0;
 }
 
-.contact-form .form-label {
+.contact-form .form-label,
+.offer-form .form-label {
     font-family: 'Averia Libre', sans-serif;
     color: #555;
 }
 
-.contact-form .form-control {
+.contact-form .form-control,
+.contact-form .form-select,
+.offer-form .form-control,
+.offer-form .form-select {
     border-radius: 5px;
     font-family: 'Averia Libre', sans-serif;
 }
 
-.contact-form .form-check-label {
+.contact-form .form-check-label,
+.offer-form .form-check-label {
     font-size: 0.9rem;
     color: #555;
 }
 
 .contact-info {
     background-color: #212529;
-    /* Dunkelgrau wie Footer */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -482,40 +415,16 @@ body {
 
 .contact-info .golden-icon {
     font-size: 1.2rem;
-    color: #F4C430;
 }
 
-/* Animationen */
-.fade-in-left {
-    opacity: 0;
-    transform: translateX(-50px);
-    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-}
-
-.fade-in-left.visible {
-    opacity: 1;
-    transform: translateX(0);
-}
-
-
-
-
-
-/* Footer Sektion */
+/* Footer Section */
 .footer-section {
     background-color: #212529;
-    /* Dunkelgrau */
     color: #fff;
 }
 
 .footer-section .golden-title {
     font-size: 1.5rem;
-    color: #FFD700;
-}
-
-.footer-section .intro-text {
-    font-size: 0.9rem;
-    color: #ccc;
 }
 
 .social-links a {
@@ -525,7 +434,6 @@ body {
 
 .social-links a:hover {
     color: #F4C430;
-    /* Helleres Gold beim Hover */
 }
 
 .footer-section a {
@@ -542,17 +450,13 @@ body {
     color: #999;
 }
 
-/* Sticky WhatsApp Button (links) */
+/* Sticky Buttons */
 .sticky-whatsapp {
     position: fixed;
     bottom: 20px;
-    /* Abstand vom unteren Rand */
     left: 20px;
-    /* Links statt rechts */
     z-index: 1000;
     padding: 10px 20px;
-    font-family: 'Averia Libre', sans-serif;
-    font-weight: 600;
     font-size: 1rem;
     border-radius: 25px;
     background-color: #DAA520;
@@ -567,17 +471,14 @@ body {
     transform: scale(1.05);
 }
 
-/* Sticky Nach-oben Button (rechts) */
 .sticky-top-btn {
     position: fixed;
     bottom: 20px;
     right: 20px;
     z-index: 1000;
     padding: 10px 15px;
-    font-family: 'Averia Libre', sans-serif;
     font-size: 1.2rem;
     border-radius: 50%;
-    /* Rund für Pfeil */
     background-color: #DAA520;
     border-color: #DAA520;
     text-decoration: none;
@@ -590,20 +491,6 @@ body {
     transform: scale(1.05);
 }
 
-/* Auf Mobilgeräten sichtbar lassen */
-@media (max-width: 767.98px) {
-    .sticky-whatsapp {
-        padding: 8px 15px;
-        /* Etwas kleiner */
-        font-size: 0.9rem;
-    }
-
-    .sticky-top-btn {
-        padding: 8px 12px;
-        font-size: 1rem;
-    }
-}
-
 /* Cookie Banner */
 .cookie-banner {
     position: fixed;
@@ -611,34 +498,14 @@ body {
     left: 0;
     width: 100%;
     background-color: #212529;
-    /* Dunkelgrau wie Footer */
     padding: 15px 0;
     z-index: 1100;
-    /* Über Sticky-Buttons */
     box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
     display: none;
-    /* Startet versteckt, JS zeigt es */
-}
-
-.cookie-banner .intro-text {
-    font-size: 0.9rem;
-    color: #ccc;
 }
 
 .cookie-banner .btn-sm {
-    font-family: 'Averia Libre', sans-serif;
-    font-weight: 600;
     padding: 5px 15px;
-}
-
-.cookie-banner .btn-warning {
-    background-color: #DAA520;
-    border-color: #DAA520;
-}
-
-.cookie-banner .btn-warning:hover {
-    background-color: #FFD700;
-    border-color: #FFD700;
 }
 
 .cookie-banner .btn-outline-warning {
@@ -651,104 +518,38 @@ body {
     border-color: #FFD700;
 }
 
-/* Responsivität */
-@media (max-width: 767.98px) {
-    .cookie-banner .container {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .cookie-banner .intro-text {
-        margin-bottom: 10px;
-    }
-}
-
-/* Privacy Sektion */
-.privacy-section {
-    background-color: #f8f9fa;
-    padding: 80px 0;
-}
-
-.privacy-section .card {
-    border: none;
-    border-radius: 10px;
-    background-color: #fff;
-}
-
-.privacy-section .card-body {
-    padding: 30px;
-}
-
-.privacy-section .service-highlight {
-    color: #DAA520;
-    font-size: 1.5rem;
-}
-
-.privacy-section .intro-text {
-    font-size: 1rem;
-    color: #555;
-    line-height: 1.6;
-}
-
-/* Impressum Sektion */
+/* Privacy & Impressum Sections */
+.privacy-section,
 .impressum-section {
     background-color: #f8f9fa;
     padding: 80px 0;
 }
 
+.privacy-section .card,
 .impressum-section .card {
     border: none;
     border-radius: 10px;
     background-color: #fff;
 }
 
+.privacy-section .card-body,
 .impressum-section .card-body {
     padding: 30px;
 }
 
-.impressum-section .service-highlight {
-    color: #DAA520;
-    font-size: 1.5rem;
-}
-
-.impressum-section .intro-text {
-    font-size: 1rem;
-    color: #555;
-    line-height: 1.6;
-}
-
-/* Angebot Sektion */
+/* Angebot Section */
 .offer-section {
     background-color: #f8f9fa;
     padding: 80px 0;
 }
 
-.offer-form .form-label {
-    font-family: 'Averia Libre', sans-serif;
-    color: #555;
-}
-
-.offer-form .form-control,
-.offer-form .form-select {
-    border-radius: 5px;
-    font-family: 'Averia Libre', sans-serif;
-}
-
-.offer-form .form-check-label {
-    font-size: 0.9rem;
-    color: #555;
-}
-/* Thank You Sektion */
+/* Thank You Section */
 .thank-you-section {
     background-color: #f8f9fa;
-    padding: 100px 0; /* Mehr Platz für Zentrierung */
+    padding: 100px 0;
 }
 
-.thank-you-section .intro-text {
-    font-size: 1.2rem;
-    color: #555;
-}
-/* Responsivität für Mobilgeräte */
+/* Responsive Anpassungen */
 @media (max-width: 767.98px) {
     .how-we-work-section .row {
         flex-direction: column;
@@ -776,20 +577,13 @@ body {
         font-size: 0.75rem;
     }
 
-    .step-col {
-        margin-bottom: 15px;
-        /* Weniger Abstand vor Pfeil */
-    }
-
+    .step-col,
     .arrow-col {
         margin-bottom: 15px;
-        /* Abstand nach Pfeil */
     }
 
-    /* Mobile Ansicht */
     .mobile-fade-in {
         opacity: 0;
-        /* Unsichtbar bis Scroll */
         transform: translateY(20px);
         transition: opacity 0.6s ease-out, transform 0.6s ease-out;
     }
@@ -798,7 +592,49 @@ body {
         opacity: 1;
         transform: translateY(0);
     }
+
+    .fade-in-right {
+        transform: translateY(20px);
+        /* Von unten statt rechts */
+    }
+
+    .fade-in-right.visible {
+        transform: translateY(0);
+    }
+
     .golden-title {
         font-size: 2rem;
+    }
+
+    .sticky-whatsapp {
+        /*bottom: 70px;*/
+        /* Höher verschieben für Platz */
+        padding: 8px 15px;
+        font-size: 0.9rem;
+    }
+
+    .sticky-top-btn {
+        padding: 8px 12px;
+        font-size: 1rem;
+    }
+
+    .cookie-banner .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .cookie-banner .intro-text {
+        margin-bottom: 10px;
+    }
+
+    /* Kontaktformular-Anpassungen */
+    .contact-form {
+        text-align: center;
+        /* Zentriert den Button */
+    }
+
+    .contact-form .btn {
+        margin-bottom: 30px;
+        /* Abstand zur Kontaktinfo */
     }
 }
